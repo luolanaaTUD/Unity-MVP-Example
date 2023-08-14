@@ -11,6 +11,5 @@ namespace Common.Model
         {
             Lives = 10;
         }
-
     }
 }

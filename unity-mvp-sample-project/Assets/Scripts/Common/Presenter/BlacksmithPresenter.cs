@@ -8,8 +8,9 @@ namespace Common.Presenter
 {
     public class BlacksmithPresenter : IBlacksmithPresenter
     {
-        IBlacksmithView View;
-        BlacksmithModel model;
+        readonly IBlacksmithView View;
+        readonly BlacksmithModel model;
+
         public BlacksmithPresenter(IBlacksmithView view)
         {
             model = new BlacksmithModel();

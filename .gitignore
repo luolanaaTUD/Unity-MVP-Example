@@ -1077,3 +1077,4 @@ unity-mvp-sample-project/Library/Artifacts/59/590f71c7bca790a5c78e95e9b0a519de
 unity-mvp-sample-project/Library/Artifacts/59/598ee651fa0def90d504af58b70c1a82
 unity-mvp-sample-project/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache
 unity-mvp-sample-project/Temp/UnityLockfile
+*.log
