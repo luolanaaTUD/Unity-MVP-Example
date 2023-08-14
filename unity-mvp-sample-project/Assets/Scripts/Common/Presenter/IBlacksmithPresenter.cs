@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Common.Presenter
 {
-    public interface IBlacksmithPresenter
+    public interface IBlacksmithPresenter: IDisposable
     {
         void Addlives();
         void Greet();

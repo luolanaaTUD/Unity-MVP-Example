@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
 using Common.Model;
 using Common.View;
 
@@ -8,29 +6,36 @@ namespace Common.Presenter
 {
     public class BlacksmithPresenter : IBlacksmithPresenter
     {
-        readonly IBlacksmithView View;
+        readonly IBlacksmithView view;
         readonly BlacksmithModel model;
 
         public BlacksmithPresenter(IBlacksmithView view)
         {
             model = new BlacksmithModel();
+            this.view = view;
 
-            View = view;
+            model.OnLivesAdded += Addlives;
         }
+
         public void Addlives()
         {
-            model.Lives += 10;
-            View.SetLives(model.Lives);
+            model.AddLives(10);
+            view.SetLives(model.Lives);
+        }
+
+        public void Dispose()
+        {
+            model.OnLivesAdded -= Addlives;
         }
 
         public void Greet()
         {
-            View.PlayAnimation("greet");
+            view.PlayAnimation("greet");
         }
 
         public void Jump()
         {
-            View.DoJump();
+            view.DoJump();
         }
     }
 }

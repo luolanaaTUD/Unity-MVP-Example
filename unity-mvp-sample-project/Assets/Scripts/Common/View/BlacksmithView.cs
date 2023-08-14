@@ -21,7 +21,6 @@ namespace Common.View
         {
             presenter = new BlacksmithPresenter(this);
             anim = GetComponent<Animator>();
-    
         }
 
         void Update()
@@ -53,6 +52,12 @@ namespace Common.View
                 }
             }
         }
+
+        private void OnDestroy()
+        {
+            presenter.Dispose();
+        }
+
 
         #region <<Events trigger presetner methods>>
 

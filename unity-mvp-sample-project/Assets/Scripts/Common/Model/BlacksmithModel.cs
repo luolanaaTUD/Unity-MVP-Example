@@ -1,15 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
+
 namespace Common.Model
 {
     public class BlacksmithModel
     {
-        public int Lives { get; set; }
+        private int _lives;
+
+        public int Lives => _lives;
+
+        public event Action OnLivesAdded;
 
         public BlacksmithModel()
         {
-            Lives = 10;
+            _lives = 10;
+        }
+
+        public void AddLives(int amount)
+        {
+            _lives += amount;
+            OnLivesAdded?.Invoke();
         }
     }
 }
